@@ -1,0 +1,17 @@
+Javascript fue creado en 1995 por Brendan Eich, un programador de los Estados Unidos.
+
+Java no es Javascript
+
+Javascript antes se llamaba
+    *Mocha
+    *Livescript
+    *Aprovechando la popularidad de Java paso a llamarse
+    Javascript
+
+Java is to Javascript
+as
+Ham is to Hamster
+
+Javascript nace en 1995, esta basado en ECMAScript
+
+
