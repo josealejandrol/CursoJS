@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">undefined, null y NaN</h1>
+            <p>null, undefined y NaN son casos muy particulares de JavaScript</p>
+            <p>
+                Tanto como null y undefined van a representar un valor ausente, es decir una variable que no tiene valor,
+                pero la gran diferencia es que mientras que:
+                <ul>
+                    <li>undefined no ha sido inicializada.</li>
+                    <li>null es un valor especial que indica que la variable esta vacía, es un valor intencionalmente asignado por el programador.</li>
+                    <li>también undefined es un valor asignado por javascript, cuando detecta que una variable no tiene valor.</li>
+                </ul>
+            </p>
+            <p>NaN, Not a Number. Es arrojado por JavaScript cuando al hacer una operación aritmetica uno de los 2 datos que se vayan a sumar por ejemplo no sea un número.</p>
+        </div>
+        <script>
+            //undefined indica que no se ha inicializado una variable
+            // y que el valor está ausente
+            let indefinida;
+            console.log(indefinida);
+
+            //null es un valor especial que indica la ausencia de un valor
+            let nulo = null;
+            console.log(nulo);
+
+            //NaN Not a Number
+            //Se muestra cuando se quieren hacer operaciones aritmeticas
+            //En donde uno de los dos datos no es un número
+            let noEsUnNumero = "hola" * 3.5;
+            console.log(noEsUnNumero);
+        </script>
+    </div>
+</body>
+</html>
