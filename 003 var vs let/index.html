@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JS</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Variables</h1>
+            <p>Una variable es un lugar en la memoria de nuestra computadora para almacenar datos</p>
+        </div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Tipos de datos en JavaScript</h1>
+            <ol>
+                <li><strong>Primitivos:</strong> Se accede directamente al valor.</li>
+                <ul>
+                    <li>string</li>
+                    <li>number</li>
+                    <li>boolean</li>
+                    <li>null</li>
+                    <li>undefines</li>
+                    <li>NaN</li>
+                </ul>
+                <li><strong>Compuestos o Complejos:</strong> Se accede a la referencia del valor.</li>
+                <ul>
+                    <li>object = {}</li>
+                    <li>array = [ ]</li>
+                    <li>function () {}</li>
+                    <li>Class {}</li>
+                    <li>etc.</li>
+                </ul>
+            </ol>
+        </div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Fundamentos de JavaScript</h1>
+
+            <h3 style="text-align: center;">var vs let</h3>
+            <p>Las variables tienen un ámbito de existencia/bloque, lo que se conoce como el scope de las variables.</p>
+            <p>En las versiones anteriores a ECMAScript 6, solo se utilizaba var y el alcance de var es global por lo tanto al utilizar variables dentro de funciones con un bloque if, si se declaraba var dentro de un if esta variable tenia alcance global dentro de esa función.</p>
+            <p>Para solucionar esto, en la versión de ECMAScript 6 se agregó otro tipo de variable llamado "let" el cual su scope es el bloque de código donde se encuentre declarada. </p>
+            <p>Un bloque de JavaScript esta separado por llaves {}</p>
+            <p>En el navegador el objeto global es window mientras en node es global, con var uno accede a las variables con window.nombre y en node con global.nombre</p>
+            <script>
+                var hola = "Hola Mundo";
+                let hello = "Hello World";
+                console.log(hola); //Global
+                console.log(hello); //Bloque
+                console.log(window); //Mapea todo el objeto del navegador
+                console.log(window.hola);
+                console.log(window.hello);
+
+                //Ambito de bloque con var
+                var musica = "Pop";
+                console.log("Variable musica antes del bloque ", musica);
+                {
+                    var musica = "Trap";
+                    console.log("Variable musica dentro del bloque ", musica);
+                }
+                console.log("Variable musica despues del bloque ", musica);
+                
+                //La elevación de variables es subir la variable musica = Trap, la lleva al al inicio
+                //Comentario de una linea
+                /*Comentario de
+                varias 
+                lineas*/
+
+                //Ambito de bloque con let
+                //let mantiene el valor de la variable dentro del bloque actual
+                let musica2 = "Pop";
+                console.log("Variable musica antes del bloque ", musica2);
+                {
+                    let musica2 = "Trap";
+                    console.log("Variable musica dentro del bloque ", musica2);
+                }
+                console.log("Variable musica despues del bloque ", musica2);
+            </script>
+        </div>
+    </div>
+</body>
+</html>
