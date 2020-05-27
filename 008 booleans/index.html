@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Booleanos Booleans</h1>
+            <p>Este tipo de dato nos permite declarar una variable con 1 valor u otro unicamente, verdadero o falso: true o false.</p>
+            <br>
+            <p>Hay valores que aunque no sean declarados como booleanos con el valor true, tienden a ser verdaderos por ejemplo:</p>
+            <ul>
+                <li>if(true)//true</li>
+                <li>if({})//true</li>
+                <li>if([ ])//true</li>
+                <li>if(42)//true</li>
+                <li>if("foo")//true</li>
+                <li>if(new Date())//true</li>
+                <li>if(-42)//true</li>
+                <li>if(3.14)//true</li>
+                <li>if(-3.14)//true</li>
+                <li>if(Infinity)//true</li>
+                <li>if(-Infinity)//true</li>
+            </ul>
+            <p>Y hay valores que también tienden a ser falsos, por ejemplo:</p>
+            <ul>
+                <li>if(false)//false</li>
+                <li>if(null)//false</li>
+                <li>if(undefined)//false</li>
+                <li>if(0)//false</li>
+                <li>if(NaN)//false</li>
+                <li>if('')//false</li>
+                <li>if("")//false</li>
+                <li>if(document.all) [1] //false</li>
+            </ul>
+        </div>
+        <script>
+            let verdadero = true;
+            let falso = false;
+            let v = Boolean(true);
+            let f = Boolean(false);
+
+            console.log(verdadero, falso, v, f);
+            console.log(typeof(verdadero), typeof falso);
+
+            console.log(Boolean(0));//false
+            console.log(Boolean(-5));//true
+            console.log(Boolean(""));//false
+            console.log(Boolean(" "));//true
+
+        </script>
+    </div>
+</body>
+</html>
