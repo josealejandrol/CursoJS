@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Cadenas de texto (strings)</h1>
+            <p>Un string es una secuencia de caracteres.</p>
+            <p>Es un objeto que representa una serie de caracteres dentro de una cadena, según MDN.</p>
+
+            <br>
+
+            <p>Los objetos en JavaScript tienen dos atributos muy importantes: propiedades y metodos </p>
+            <ul>
+                <li>Las propiedades van a ser atributos de un objeto, que nos dan información del objeto</li> 
+                <ul>
+                    <li>Por ejemplo: La propiedad de un string es: String.length</li>
+
+                </ul>
+                <li>Los metodos son acciones que el objeto hace.</li>
+            </ul>
+            <p>La diferencia entre las propiedades y los metodos es:</p>
+            <ul>
+                <li>Un metodo termina con parentesis (), dentro de esos parentesis puede que reciba ciertos datos para poder funcionar.</li>
+            </ul>
+
+            <br>
+            <p></p>
+
+             
+
+
+
+            <script>
+                //Cadenas de Texto aka Strings
+                let cadena = "Soy una cadena de texto";
+                let nombre = 'José';
+                let apellido = "Alejandro";
+
+                //Declaracion con el contructor String
+                let saludo = new String("Hola Mundo");
+
+                let lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum ac neque at placerat. Nam."
+
+                console.log(nombre, apellido, saludo);
+                console.log(
+                    nombre.length, 
+                    apellido.length, 
+                    saludo.length,
+                    nombre.toUpperCase(),
+                    apellido.toLowerCase(),
+                    lorem.includes("amet"),
+                    lorem.includes("José"),
+                    lorem.trim(),//Quita los espacios al incio y final del parrafo
+                    lorem.split(" "),
+                    lorem.split(","),
+                );
+
+                
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>
