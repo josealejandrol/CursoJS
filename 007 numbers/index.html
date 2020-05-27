@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Números Numbers</h1>
+            <p>Mientras en otros lenguajes existen números enteros, números flotantes o números decimales.</p>
+            <p>En JavaScript solo existen números (Numbers)</p>
+            <p>Number es un objecto constructor para crear un tipo de dato primitivo number.</p>
+            <br>
+            <br>
+            <p>Pero JavaScript tiene un detalle cuando maneja muchos decimales.</p>
+        </div>    
+    </div>
+    <script>
+        let a = 1;
+        let b = new Number(3);
+        let c = 8.19;
+
+        console.log(a,b);
+        console.log(c.toFixed(1)); //El metodo toFIxed nos dice formatea los numeros decimales, haciendo que solo exista la cantidad que se le pase después del punto.
+        console.log(parseInt(c)); //Returna la parte entera
+        console.log(parseFloat(c)); //Retorna la parte entera y flotante
+
+        let d = "5.6";
+        console.log(typeof(d));//typeof nos retorna el tipo de dato de la variable
+
+        console.log(a + b); //ambos valores son de tipo number y por ello realiza la suma
+        console.log(c + d); //En este caso ambos son diferentes, uno de tipo number y el otro string por lo tanto se concatenan los valores.
+
+        // Cuando se tiene un formulario por ejemplo la entrada de la edad de una persona, el dato recibido es de tipo texto/string
+        //Para hacer el cambio hay que castear el valor con un parseInt(entrada);
+
+        console.log(c + parseInt(d));
+        console.log(c + parseFloat(d));
+
+        console.log(c + Number.parseInt(d));
+        console.log(c + Number.parseFloat(d));
+
+    </script>
+</body>
+</html>
