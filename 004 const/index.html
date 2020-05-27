@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">const</h1>
+            <p>Nos permite crear variables que no vayan a cambiar su valor durante el flujo de nuestra aplicación.</p>
+            <p>No se puede declarar constantes vacías o sín valor</p>
+            <p>Una variable const no se puede reasignar su valor.</p>
+            
+            <br>
+            <p>Una variable const no se puede cambiar su valor cuando es un tipo de dato primitivo, pero cuando es un tipo de dato compuesto esto cambia.</p>
+            <br>
+            <p>Un objeto es una colección de atributo/clave y valor.</p>
+            <br>
+            <p>Un array/arreglo es una variable que almacena varias variables</p>
+            <br>
+            <p>Una constante no funciona de la misma manera para valores primivos que para valores compuestos.</p>
+
+            <p>Si a lo largo del flujo de tu aplicación o programa la variable va a cambiar, es decir, puede que empezo con una cadena de texto, number u otro tipo usa let.</p>
+            <p>Pero si va a ser una variable que en el flujo no va a cambiar entonces utiliza una constante.</p>
+            <p>Conclusión, olvidate de var en vez de var usa let o const.</p>
+
+            <script>
+                const PI = 3.1416;
+                //const NUEVE;  
+                //console.log(NUEVE); //No se puede inprimir una variable const vacía o sin valor
+
+                const objeto = {
+                    nombre: "Jose",
+                    edad: 23
+                }
+
+                let colores = ["azul", "blanco", "rojo"];
+
+                console.log(objeto);
+                console.log(colores);
+
+                //Aunqur agregue más elementos las variables siguen siendo un objeto y un arreglo
+                objeto.correo = "josealejandrolzr@gmail.com";
+                colores.push('amarillo');
+
+                console.log(objeto);
+                console.log(colores);
+            </script>
+        </div>
+    </div>
+</body>
+</html>
