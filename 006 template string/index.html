@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Template Strings</h1>
+            <p>Las cadenas de texto tienen 2 características:</p>
+            <ul>
+                <li>La concatenación va de ir uniendo cadenas de texto y variables.</li>
+                <li>La interpolación, es meter en una cadena de texto el valor dinamicamente de una variable </li>
+            </ul>
+            <p>Cuando se utiliza template string debemos comenzar y finalizar nuestra sentencia con el acento invertido o back tick ( <strong>` `</strong> )</p>
+        </div>
+    </div>
+
+    <script>
+        let nombre = "José";
+        let apellido = "Alejandro";
+
+        //Concatenación
+        let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+        console.log(saludo);
+
+        //Hacer lo anterior es muy cansado para eso sirven los template string
+        //Un template string es interpolar variables, y esto es meter en una cadena de texto el valor dinamicamente de una variable.
+
+        let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;//<--- acento invertido o back tick
+        console.log(saludo2);
+
+        let ul = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>";
+
+        console.log(ul);
+
+        let ul2 = `
+            <ul>
+                <li>Primavera</li>
+                <li>Verano</li>
+                <li>Otoño</li>
+                <li>Invierno</li>
+            </ul>
+        `;
+
+        console.log(ul2);
+
+        let ul3 = "<ul>";
+            ul3 += "<li>Primavera</li>";
+            ul3 += "<li>Verano</li>";
+            ul3 += "<li>Otoño</li>";
+            ul3 += "<li>Invierno</li>";
+            ul3 += "</ul>";
+
+        console.log(ul3); 
+
+    </script>
+</body>
+</html>
