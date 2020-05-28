@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Objetos objects</h1>
+            <p>Un objeto es un tipo de dato compuesto.</p>
+            <p>Un objeto puede ser declarado con let o const, pero es recomendable usar const porque como tal no importa si los valores cambian o se transforman porque seguirá siendo el mismo objeto.</p>
+            <p>Un objecto es una colección de llaves/claves y valores.</p>
+            <br>
+            <p>Cuando hablamos de tipos de datos compuestos, no accedemos al valor sino a una referencia.</p>
+
+        </div>
+        <script>
+            let a = new String("Hola");
+            console.log(a); //Esto es un objeto de tipo String
+            //En JavaScript todo es un objeto
+
+            //
+            const b = {}
+            console.log(b); //La consola nos dice que b es un Object
+
+            const c = new Object();//Declaración de un objeto utilizando el constructor de Object
+            console.log(c);
+
+            //Un objecto puede tenes muchas llaves
+            //El valor de una llaves puede ser cualquier tipo de dato
+            const jose = {
+                nombre: "José",//String
+                apellido: "Alejandro",
+                edad: 23, //number
+                pasatiempos: ["Correr", "Hacer ejecicio", "Jugar Videojuegos"],//Array
+                soltero: true, //boolean
+                contacto: { //objecto dentro de un objecto
+                    email: "josealejandrolzr@gmail.com",
+                    fb: "José Alejandro",
+                    telefono: "+529932123456"
+                },
+                saludar: function(){ //una función
+                    console.log("Hola :D")
+                },
+                decirMiNombre: function(){
+                    console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años`);//el objecto this esta apuntanto a el contexto actual, nuestro contexto es el objecto jose
+                } 
+            }
+            console.log(jose);
+            console.log(jose["nombre"]);//Notación del corchete
+            console.log(jose["apellido"]);
+            
+            //Notación del punto accediendo a sus atributos
+            //Dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama métodos.
+            //nombre, apellido, edad, etc son atributos del objeto
+            //saludar no es un atributo, saludar en un metodo por ser una función
+            console.log(jose.nombre);
+            console.log(jose.apellido);
+            console.log(jose.edad);
+            console.log(jose.soltero);
+            console.log(jose.pasatiempos);//Se imprime el array completo
+            console.log(jose.pasatiempos[2])//Imprimiendo un pasatiempo en especifico
+            console.log(jose.contacto);//Nos devuelve el objecto de contacto
+            console.log(jose.contacto.email);//Imprimiendo un atributo de nuestro objecto contacto
+            jose.saludar();//Accediendo al metodo de nuestro objecto jose, no esta dentro de un console.log porque el metodo tiene un console.log y eso causaria un conflicto
+            jose.decirMiNombre();
+            
+            //Metodos de Object
+            // * Object.keys(); espera un objecto e imprime unicamente las claves de ese objecto
+            // * Object.values(); espera un objecto e imprime unicamente los valores del objecto
+            
+
+            console.log(Object.keys(jose));
+            console.log(Object.values(jose));
+            console.log(jose.hasOwnProperty("nombre")); //Verifica si la clave nombre existe dentro de nuestro objecto
+            console.log(jose.hasOwnProperty("nacimiento")); //false
+
+
+        </script>
+    </div>
+</body>
+</html>
