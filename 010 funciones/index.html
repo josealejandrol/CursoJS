@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Funciones function</h1>
+            <p>Las cosas por lo general en programación suceden dentro de funciones.</p>
+            <p>Una función es un bloque de código autocontenido, esto quiere decir que, tiene su propio contenido independientemente al scope o el ambito global.</p>
+            <p>Una función se define una sola vez y se puede ejecutar en cualquier momento.</p>
+            <p>Es un fragmento de código que se declara una vez y se puede reutilizar tantas veces como sea necesario.</p>
+            <p>Una función puede o no recibir parametros, que son datos que recibe separados por coma (,).</p>
+            <p>Puede devolver o no valores.</p>
+
+            <br>
+
+            <p>Las funciones particularmente en javascript son un objeto, son un tipo de dato muy especial.</p>
+            <p>Las funciones son tan poderosas, pueden recibir funciones y también pueden retornar la activación de una función</p>
+            <p>Se dice que las funciones son ciudadanos de primera clase porque pueden asignarse a un valor, y pueden pasarse como argumentos y usarse como un valor de retorno</p>
+
+            <p>A partir de ECMAScript 2015 o ES6, tenemos una característica muy importante que son:</p>
+            <ul>
+                <li>Las funciones flechas o arrow function "()=>{}"</li>
+            </ul>
+            <br>
+
+        <script>
+            //===Funciones Declaradas===
+            function estoEsUnaFuncion(){
+                //Cuerpo de la función
+                console.log("Uno");
+                console.log("Dos");
+                console.log("Tres");
+            }
+
+            //Invocación de función
+
+            //Podemos mandar a llamar una función de la siguiente manera
+            //Pero no se va a ejecutar
+            estoEsUnaFuncion
+
+            //Los parentesis indican que la función se va a ejecutar
+            estoEsUnaFuncion();
+
+            //Función que devuelve valor
+            //Puede devolver cualquier tipo de dato ya sea primitivo o compuesto
+            function unaFuncionQueDevuelveValor(){
+                //Cuando el interprete encuentra la palabra reservada return, returna todo lo que esta antes del return
+                //Lo que esta después lo ignora
+                console.log("hola");
+                return 19;
+                console.log("adios");
+                return "La función ha retornado una cadena de texto";
+            }
+
+            let valorDeFuncion = unaFuncionQueDevuelveValor();
+
+            console.log(valorDeFuncion);
+
+            //Función que recibe valores
+            function saludar(nombre = "Desconocido", edad=0){
+                console.log(`Hola, mi nombre es ${nombre} y tengo ${edad} años.`);
+            }
+
+            saludar("José", 23);
+
+            saludar(); //Esto nos retornara el mensaje con los parametros undefined.
+                        //Para evitar esto puedo asignarle valores a los parametros.
+            
+            //==============================================
+
+            funcionDeclarada(); //Aunque yo mande a llamar la función de abajo JavaScript lo que hace es una elevación o hoisting
+                                //Lo primero que ordena JavaScript son variables y funciones
+
+                                //Hoisting es que las variables o funciones se mueven al principio de su scope o ámbito.
+
+            //Función declarada
+            function funcionDeclarada(){
+                console.log("Esto es una función declarada, puede invocarse en cualquier parte de nuestro código incluso antes de que la función sea declarada.");
+            }
+
+            funcionDeclarada();
+
+            //===Funciones expresadas===
+
+            //functionExpresada();
+
+            //Utilizar las funciones como expresión
+            //Asignarle dinamicamente la función a una variable
+            
+            //Función anónima, funcion que no tiene nombre
+            //Función que no tiene nombre y aparte se la estamos asignando a una variable.
+            const functionExpresada = function(){
+                console.log("Esto es una función expresada, es decir una función que se le ha asignado como valor a una variables, si invocamos esta función antes de su definición JavaScript nos dirá...");
+                //Invocar la función antes de su declaración para ver lo que pasa.
+            }
+
+            functionExpresada();
+
+            //Diferencias:
+            //Las funciones declaradas pueden invocarse antes de su declaración,
+            //Mientras las funciones expresadas tienes que declararse antes de su invocación,
+            //No se pueden utilizar hasta que no hayan sido inicializadas
+            
+
+            //Además a nivel de buenas prácticas, el que se declare funciones expresadas evita errores de compilación, por tener mal acomodado el código.
+
+        </script>
+    </div>
+</body>
+</html>
