@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Arreglos arrays</h1>
+            <p>Los arreglos son variables que contienen multiples valores.</p>
+            <p>Un arreglo es una colección de elementos, estos elementos pueden ser de diferentes tipos.</p>
+            <p>En los arreglos el primer elemento ocupa la posición 0</p>
+
+        </div>
+        <script>
+            //Arreglo vacion
+            const a = [];
+            console.log(a);
+
+            const b = [1, true, "Hola", ["A", "B", "C", ["X", "Y", "Z"]]];
+            console.log(b);
+
+            console.log(b.length);
+
+            console.log(b[2]); //Acceder a un valor por referencia en la posición 2, referencia = coordenadas
+
+            console.log(b[3][1]); //Acceder a un la posición de un arreglo que a su vez tiene otro arreglo
+
+            console.log(b[3][3][2]);//Con 3 arreglos
+
+            //Nuevas formas de declarar arreglos
+            const c = Array.of("I", "J", "K", 7, 8, 9);
+            console.log(c);
+
+            const d = Array(10).fill(false); //Inicializar un arreglo con valores por defecto
+            console.log(d);
+
+            const e = new Array(); //Esta forma ya no se utiliza
+
+            const f = new Array(1,2,3,true,false);
+            console.log(f);
+
+            //Propiedades de los arreglos
+            // * Array.length
+
+            const colores = ["Rojo", "Verde", "Blanco", "Azul", "Amarillo"];
+            console.log(colores.length);
+
+            //Metodos de los arreglos
+            // * Array.push() -- Agrega un elemento al final
+            // * Array.pop() -- Elimina el ultimo elemento
+            // * Array.forEach() -- Ejecuta una función por cada elemento del array
+            // * Array.map()
+            // * Array.reduce()
+            // * Array.filter()
+            // * Array.soft()
+
+            colores.push("Negro");
+            console.log(colores);
+
+            colores.pop();
+            console.log(colores);
+
+            colores.forEach(function(element, index){
+                console.log(`<li id="${index}">${element}</li>`)
+            });
+
+        </script>
+    </div>
+</body>
+</html>
