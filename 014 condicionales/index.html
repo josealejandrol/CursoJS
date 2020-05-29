@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Condicionales</h1>
+            <p>Estructura de control: Es aquel mecanismo permite controlar el flujo de tu programación</p>
+            <p>Estructura secuencial: Código que se va ejecutando una linea despues de otra.</p>
+            <p>Estructura condicional: dependiendo de una condición hacemos ciertas acciones u otras</p>
+            <!-- <p>Loops o estructuras repetitivas. </p> -->
+            
+            <ul>
+                <li>if - else</li>
+                <li>if anidados</li>
+                <li>operador ternario (condición)? verdadero : falso</li>
+                <li>switch case</li>
+            </ul>
+        </div>
+        <script>
+            //===Condicionales===
+            //if - else
+            let edad = 17;
+
+            if(edad > 17){
+                console.log("Eres mayor de edad");
+            }else {
+                console.log("Eres menor de edad")
+            }
+
+            if(edad >= 18){
+                console.log("Eres mayor de edad");
+            }else {
+                console.log("Eres menor de edad")
+            }
+
+            if(edad < 18){
+                console.log("Eres menor de edad")
+            }else {
+                console.log("Eres mayor de edad");
+            }
+
+            if(edad <= 17){
+                console.log("Eres menor de edad")
+            }else {
+                console.log("Eres mayor de edad");
+            }
+
+            //If anidados
+            //if - else if - else
+            //Dejame dormir 0hrs - 5hrs
+            //Buenos días 6hrs - 11hrs
+            //Buenas tardes 12hrs - 18hrs
+            //Buenas noches 19hrs - 23hrs
+            let hora = 24;
+            if((hora >= 0) && (hora <= 5)){
+                console.log("Dejame dormir!!!");
+            }else if((hora >= 6) && (hora <= 11)){
+                console.log("Buenos días!");
+            }else if((hora >= 12) && (hora <= 18)){
+                console.log("Buenos tardes!");
+            }else{
+                console.log("Buenos noches!");
+            }
+
+            //Simplificación del if -else en una sola linea de código
+            //Operador ternario: Se le llama así porque tiene 3 partes
+            //(condición)? verdadero : falso
+            console.log("Operador ternario");
+
+            let eresMayor = (edad >= 18)? "Eres mayor de edad" : "Eres menor de edad";
+            console.log(eresMayor);
+
+            //Switch case
+            //Este nos sirve cuando tengamos que evaluar una situación 
+            //en donde tengamos diferentes valores para una misma variable
+            
+            // domingo - 0
+            // lunes - 1
+            // martes - 2
+            // miercoles - 3
+            // jueves - 4
+            // viernes - 5
+            // sabado - 6
+
+            //Switch recibe un valor y lo evalua con los diferentes casos
+            switch(2){
+                case 0:
+                    console.log("Domingo");
+                    break;
+                case 1:
+                    console.log("Lunes");
+                    break;
+                case 2:
+                    console.log("Martes");
+                    break;
+                case 3:
+                    console.log("Miércoles");
+                    break;
+                case 4:
+                    console.log("Jueves");
+                    break;
+                case 5:
+                    console.log("Viernes");
+                    break;
+                case 6:
+                    console.log("Sábado");
+                    break;
+                default:
+                    console.log("El dia no existe");
+                    break;
+            }
+
+        </script>
+    </div>
+</body>
+</html>
