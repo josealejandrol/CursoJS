@@ -20,7 +20,7 @@ Edición Publicación Cambios
 
 9       2018        ES2018  aka ES9
 
-10      2019        ES2016  aka ES10
+10      2019        ES2019  aka ES10
 
 ESNext              ...y así sucesivamente...
 

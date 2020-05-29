@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUndamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Tipos de operadores</h1>
+            <p>Tipos de operadores:</p>
+            <ul>
+                <li>Operadores Aritméticos</li>
+                <ul>
+                    <li>+ Suma</li>
+                    <li>- Resta</li>
+                    <li>* Multiplicación</li>
+                    <li>/ División</li>
+                    <li>% Módulo</li>
+                </ul>
+                <br>
+                <li>Operadores Relacionales</li>
+                <ul>
+                    <li>> Mayor que</li>
+                    <li>< Menor que</li>
+                    <li>>= Mayor igual</li>
+                    <li><= Menor igual</li>
+                    <li>== Igualdad debil</li>
+                    <li>=== Igualdad estricta</li>
+                    <li>!= Diferencia debil</li>
+                    <li>!== Diferencia estricta</li>
+                </ul>
+                <br>
+                <li>Operadores de incremento y decremento</li>
+                <ul>
+                    <li>+= incremento</li>
+                    <li>-= decremento</li>
+                    <li>+= multiplicacion</li>
+                    <li>/= division</li>
+                    <li>Operado Unario</li>
+                    <ul>
+                        <li>++ incremento en 1</li>
+                        <li>-- decremento en 1</li>
+                    </ul>
+                </ul>
+                <br>
+                <li>Operadores Lógicos</li>
+                <ul>
+                    <li>! Negación</li>
+                    <li>|| Or</li>
+                    <li>&& And</li>
+                </ul>
+            </ul>
+        </div>
+        <script>
+            //===Operadores Aritméticos===
+            //Suma Resta Multiplicación División Módulo
+            //+ - * / % ()
+
+            //Jeararquía de operaciones 
+            //  Paréntesis
+            //  Potencias y raíces
+            //  Multiplicaciones y divisiones
+            //  Sumas y restas
+
+            let a = 5 + 5;
+            let modulo = 5%2; //Este operador nos regresa el residuo de una división
+
+            console.log(a);
+            console.log(modulo);
+
+            //===Operadores Relacionales===
+            // Mayor que >
+            // Menor que <
+            // Mayor igual >=
+            // Menor igual <= 
+            // Igualdad debil ==
+            // Igualdad estricta ===
+            // Diferencia debil !=
+            // Diferencia estricta !==
+
+             console.log(8 > 9); //false
+             console.log(9 > 8); //true
+             console.log(8 >= 9); //false
+             console.log(9 >= 8); //false
+             console.log(7 <  7); //false
+             console.log(7 <= 7); //true
+             
+            //  =   Asignación de variable, lo del lado derecho lo asigno al lado izquierdo
+            //  ==  Comparación de valores
+            //  === Comparación de valor y tipo de dato
+            //La buena práctica nos dice que debemos utilizar ===
+             
+            console.log(7 == 7); //true
+            console.log("7" == 7); //true, ambos valores tienden a verdadero
+            console.log(0 == false) //true, ambos valores tienden a ser falsos
+
+            console.log(7 === 7); //true
+            console.log("7" === 7); //false
+            console.log(0 === 7); //false
+
+            //===Operadores de Incremento y Decremento===
+            let i = 1;
+
+            i = i + 2; //i vale 1 + 2 nos da 3
+            i += 3; //i vale 1 y se incrementa 3 lo que nos da 4
+            i -= 3; //i vale 1 y se decrementa 3 lo que nos da -2
+            i *= 3; //i vale 1 y se multiplica por 3 lo que nos da 3
+            
+            //Operador Unario: porque va de 1 en 1
+            let j = 1;
+            j++ //j vale 1 y se incrementa en 1
+            j-- //j vale 1 y se decrementa en 1
+            ++j //
+            --j //
+
+            //las difencias entre uno y otro son:
+            // variable++ lee la variable y luego hace el incremento
+            // ++variable hace el incremento y se lo asigna ahi mismo a la variable
+
+            console.log(j);
+
+            //===Operadores Lógicos===
+            //Not ! Niega: Lo que es verdadero lo vuelve falso y viceversa
+            //Or || Or cuando tengo 2 o mas condiciones, con que una se cumpla es verdadera, el Or sera verdadero
+            //And && cuando tengo 2 o mas condiciones, todas deben cumplirsem es decir ser verderarm para que And se valide
+            //Para hacer comparaciones entre 2 elementos, se utiliza el Or u/o el And
+
+            console.log(!false); //true
+            console.log(!true); //false
+
+            console.log((9 === 9) || ("9" === 9)); //true, como usamos or almenos una debe ser verdadera y la primera se cumple
+            console.log((9 === 9) && ("9" === 9)); //false, con and ambas deben ser verdaderas
+            console.log((9 === 9) && ("9" === "9")); //true, porque ambas se cumplen 
+
+        </script>
+    </div>
+</body>
+</html>
