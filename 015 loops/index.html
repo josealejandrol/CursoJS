@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Ciclos loops</h1>
+            <p>Estructuras por ciclos</p>
+            <ul>
+                <li>while</li>
+                <li>do while</li>
+                <li>for</li>
+                <li>forin</li>
+                <li>forof</li>
+            </ul>
+            <!-- Actualmente el while y el do while estan cayendo mucho en desuso porque
+             son estructuras imperativas de programación estructurada
+            Y Javascript cada vez esta siendo más un lenguaje declarativo
+            al ser multi paradigma, como p.e. programación funcional o poo, generalmente nos gusta mas
+            escribir un codigo declarativo que imperativo-->
+        </div>
+        <script>
+            //while - mientras
+            let contador = 0;
+
+            //Si valido a < 10, entrará en un bucle infinito sin agregar el incremento al contador
+            while(contador < 10){
+                console.log("while", contador);
+                contador++;
+            }
+            
+            //do while
+            do{
+                console.log("do while", contador);
+                contador++;
+            }while(contador < 10);
+
+            //La diferencia entre el while y el do while
+            //En el while antes de empezar a ejecutar las lineas de codigo que condicionan
+            //ese while, la condición se tiene que cumplir
+            //En el caso del do while siempre se ejecuta una vez todo el bloque que este
+            //en la llave del do, ya que la condición/ evaluación esta al final
+
+            //for
+            //el for consta de 3 partes:
+            //el for las tiene en una sola linea de código
+            //inicialización de la variable; la condición; incremento o decremento
+            for(let i = 0; i < 10; i++){
+                console.log("for: ", i)
+            }
+
+            let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+            for(let i = 0; i < numeros.length; i++){
+                console.log(numeros[i]);
+            }
+
+            //Desde ES2015 o ES6, nos trajo variantes del for
+            
+            //==forin==
+            //Nos permite recorrer o iterar las propiedades de un objeto
+            //forin especial para objetos
+
+            const jose = {
+                nombre: "José",
+                apellido: "Alejandro",
+                edad: 23
+            }
+
+            for (const key in jose) {
+                console.log(`Key: ${key}, Value ${jose[key]}`);
+            }
+
+            //==forof==
+            //Nos permite recorrrer todos los elementos de cualquier objeto que sea iterable en javascript
+            //por ejemplo un arreglo
+            for (const elemento of numeros) {
+                console.log(elemento);
+            }
+
+            //Diferencias
+            //forin es más para objetos, objectos primitivos de javascript.
+            //forof es más para arreglos, pero no precisamente solo para arreglos
+            //forof nos permite recorrer cada uno de los elementos de cualquier objeto en javascript que sea iterable,
+            //que pueda partirlo en pequeños elementos
+
+            let cadena = "Hola Mundo";
+
+            for (const caracter of cadena) {
+                console.log(caracter);
+            }
+
+        </script>
+    </div>
+</body>
+</html>
