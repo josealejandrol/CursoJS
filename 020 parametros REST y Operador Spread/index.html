@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Parámetros REST & Operador Spread</h1>
+            <p>Son nuevas caracreristica que nos trajo ES2018 o ES9</p>
+            <ul>
+                <li>Parámetros REST</li>
+                <p>
+                    Son una forma de virtualmente de ir agregando parámetros infitinios que ya sea a una función o dentro de una variable.
+                    Imaginate que tienes un arreglo y no sabes cuantos valores vas a recibir, posteriormente con esos valores vas a
+                    hacer operaciones o ciertos procesos.
+                </p>
+                <p>
+                    Para definir los parámetros REST hay que definirlos poniendo 3 puntos suspensivos antes del nombre donde están guardados esos
+                    posibles valores infinitos:
+                    <br>
+                    ...nombreVariable
+                </p>
+                <li>Operador Spread</li>
+                <p>
+                    Nos va a permitir cuando una expresión la tengamos que expandir, tengamos que almacenar múltiples argumentos o elementos
+                    lo podamos hacer.
+                </p>
+                <p>
+                    Con el spread operator vamos a poder agregar nuevos elementos a un array o un objeto
+                </p>
+            </ul>
+        </div>
+        <script>
+            //==Parámetros REST==
+            function sumar(a, b, ...c){
+                let resultado = a + b;
+                c.forEach(function(n){
+                    resultado += n;
+                })
+                return resultado;
+            }
+            //Los parámetros REST pueden ser o no infinito, y aunque no
+            //incluyamos valores REST dentro de la función no son requeridos sea el caso
+            //Por ejemplo:
+            console.log(sumar(1,2));
+
+            //Incluyendo los parámetros REST
+            console.log(sumar(1,2,3));
+            console.log(sumar(1,2,3,4));
+            console.log(sumar(1,2,3,4,5));
+            
+            //==Spread Operator==
+            const arreglo1 = [1,2,3,4,5],
+                arreglo2 = [6,7,8,9,10];
+            
+            console.log(arreglo1, arreglo2);
+
+            //Con el Spread Operator podemos combinar 2 o más arreglos
+            const arreglo3 = [...arreglo1, ...arreglo2];
+            //Estamos combinando 2 arreglos y a la vez creando uno nuevo
+            console.log(arreglo3);
+
+            const persona = {
+                nombre: "José",
+                apellido: "Alejandro"
+            }
+
+            const nuevosDatos = {
+                ...persona,
+                edad: 23
+            }
+            console.log(nuevosDatos);
+
+        </script>
+    </div>
+</body>
+</html>
