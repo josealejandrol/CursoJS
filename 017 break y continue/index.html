@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">break & continue</h1>
+            <p>Estas palabras nos ayudan a controlar el flujo de nuestras estructuras de control por ejemplo un loop, cuando lleguemos a cierto numero de repeticiones
+                salirnos, romper la estructura o saltarnos ciertas vueltas.
+            </p>
+            <p>break: Lo que hace es salirse de la estructura switch para no estar leyendo todos los casos</p>
+            <p>continue: Hablando de bucles, se salta la iteració donde llames el continue</p>
+        </div>
+        <script>
+            const numeros = [1,2,3,4,5,6,7,8,9,0];
+
+            for(let i = 0; i < numeros.length; i++){
+                if(i ===5){
+                    break;
+                }
+                console.log(numeros[i]);
+            }
+
+            for(let i = 0; i < numeros.length; i++){
+                if(i ===5){
+                    continue;//omite el 6, porque omite el código de esa iteración,
+                    //como la posición del 6 es la 5, lo salta 
+                }
+                console.log(numeros[i]);
+            }
+        </script>
+    </div>
+</body>
+</html>
