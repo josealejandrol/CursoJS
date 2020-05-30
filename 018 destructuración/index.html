@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Destructuración</h1>
+            <p>Una de las nuevas características del ES6</p>
+            <p>destructuring: es una nueva forma de asignar valores sobre todo a arreglos u objetos</p>
+            <p>Lo que hace la destructuración es encontrar en base al nombre de variable, buscará la propiedad que se llame igual y asignale el valor en el caso de objetos.</p>
+        </div>
+        <script>
+            //Ejemplo de destructuring en React
+            //let {nombre, apellido, edad} = props;
+
+            const numeros = [1, 2, 3];
+
+            //Sin destructuración
+            let uno = numeros[0],
+                dos = numeros[1],
+                tres = numeros[2];
+            console.log(uno, dos, tres);
+
+            //Con destructuración
+            const [one, two, three] = numeros;
+            console.log(one, two, three);
+
+            const persona = {
+                nombre: "José",
+                apellido: "Alejandro",
+                edad: 23
+            }
+
+            let {nombre: a1, apellido: a2, edad: a3} = persona;
+            // console.log(nombre, apellido, edad);
+            console.log(a1, a2, a3);
+
+            //Para hacer la destructuración la variable se tiene que llamar igual a la propiedad del objeto
+            //Lo que hace la destructuración es encontrar en base al nombre de variable, buscará la propiedad que se llame igual y asignale el valor
+            //Por ejemplo, la variable age no existe en nuestro objeto persona
+            //let {nombre, apellido, age} = persona;
+            // console.log(nombre, apellido, age);
+            
+
+        </script>
+    </div>
+</body>
+</html>
