@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Manejo de errores</h1>
+            <p>Para el manejo de errores javascript tiene un mecanismo que se llama try catch finally</p>
+            <p>Es una estructura que nos permite evaluar ciertos fragmentos de código y cuando haya algún mensaje de error, que nuestro códigp
+                genere algún error lo lanzará por el catch
+            </p>
+        </div>
+        <script>
+            //try catch
+            try {
+                console.log("En el try se agrega el código a evaluar");
+                noExiste; //error de variable que no existe
+                console.log("segundo mensaje en el try");
+            } catch (error) {
+                console.log("catch captura cualquier error surgido o lanzado en el try");
+                console.log(error);
+            } finally{
+                console.log("El bloque finally se ejecutará siempre al final de un bloque try-catch");
+            }
+            //En el momento que el try-catch detecta un error, detiene la ejecución en el try y dispará el catch
+
+            //Personalizar nuestros propios mensajes
+
+            try {
+                let numero = 10;
+                // let numero = "y";
+                if(isNaN(numero)){
+                    throw new Error('El dato introducido no es un número');
+                    //El throw nos permite personalizar los errores que recibirá el catch
+                }
+                console.log(numero * numero);
+            } catch (error) {
+                console.log("Se produjo el siguiente error: ", error);
+            }
+
+            //Con esta estructura podemos manejar de una forma mejor ordenada o evaluada nuestro código
+            //P.e. cuando esperamos un tipo de dato y nos llega otro
+            
+
+
+        </script>
+    </div>
+</body>
+</html>
