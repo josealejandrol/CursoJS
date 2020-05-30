@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Objetos literales</h1>
+            <p>Los objetos literales son una nueva forma de escribir atributos y metodos e incluso de asignarlos</p>
+            <p>Objetos que literalmente definimos en una variable y los utilizamos</p>
+        </div>
+        <script>
+
+            //Así se escribía antes de que llegará la nueva característica
+            let nombre = "Firulais",
+                edad = 2;
+            
+            const perro = {
+                nombre: nombre,
+                edad: edad,
+                ladrar: function(){
+                    console.log("gua gua");
+                }
+            }
+
+            console.log(perro);
+            perro.ladrar();
+
+            //Con las nuevas características
+
+            //Javascript entiende que el nombre de la propiedad que le quieres asignar a la nueva propiedad de este objeto
+            //es igual al nombre de la variable y el valor va a ser igual al de la variable
+            //Esto agiliza el tiempo de escritura de nuestro objeto
+            const dog = {
+                nombre,
+                edad,
+                raza: "Chihuahua",
+                ladrar(){ //igual para la forma como se escribe un metodo
+                    console.log("gua gua gua");
+                }
+            };
+
+            console.log(dog);
+            dog.ladrar();
+
+        </script>
+    </div>
+</body>
+</html>
