@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Clases</h1>
+            <p>
+                Desde el año 2015 el estandar de JavaScript, nos ha dado lo que se conoce como azucar
+                sintactico, a partir del año 2015 podemos escribir clases. Sin embargo, JavaScript es
+                un lenguaje orientado a objetos basado en prototipos.
+            </p>
+            <p>
+                Aunque nosotros gramatical y sintacticamente escribamos nuestras clases,
+                JavaScript eso lo va a compilar a prototipos
+            </p>
+            <p>
+                Las clases solo vinieron a permitirnos escribir clases como en cualquier otro lenguaje,
+                pero al final son prototipos en Javascript.
+            </p>
+        </div>
+        <script>
+            //Clase
+            class Animal{
+                //Las clases para recibir parámetros tienen un método especial llamado constructor
+
+                //El constructor es un método especial que se ejecuta en el momento de instanciar la clase
+                constructor(nombre, genero){
+                    this.nombre = nombre;
+                    this.genero = genero;
+                }
+
+                //Métodos
+                //Al escribit métodos en clases ya no hace falta sacar los métodos ya que JavaScript
+                //hace esta mejora por nosotros
+                sonar(){
+                    console.log("Hago sonidos porque estoy vivo.");
+                }
+
+                saludar(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+
+                //Lo que nos hacen las clases es simplemente simplificar la escritura
+            }
+
+            const lana = new Animal("Lana", "Hembra"),
+                neeko = new Animal("Neeko", "Hembra");
+
+            //Animal es un objeto que hereda de su objeto más primitivo en JS que es Object
+
+            //Al ser clases JS pasa nuestro métodos a prototipos.
+            //Recuerden que JavaScript es un lenguaje orientado a objetos basado en prototipo
+            //las clases se compilan a prototipos
+
+            //Las clases solo simplifican la escritura
+
+            console.log(lana);
+            console.log(neeko);
+            
+            lana.saludar();
+            lana.sonar();
+
+            neeko.saludar();
+            lana.sonar();
+
+            //Herencia
+            //la palabra extendes significa de donde va a extender o heredar
+            class Perro extends Animal{
+                constructor(nombre, genero, tamano){
+                    //con el método super() manda a llamar el
+                    //constructor de la clase padre
+                    super(nombre, genero);
+
+                    //Defino los atributos nuevos
+                    this.tamano = tamano;
+                }
+
+                sonar(){
+                        console.log("Soy un perro y mi sonido es un ladrido");
+                }
+
+                ladrar(){
+                    console.log("Guauu Guauu!!")
+                }
+            }
+            
+            const chiqui = new Perro("Chiqui", "Hembra", "Pequeno");
+
+            console.log(chiqui);
+            chiqui.saludar();
+            chiqui.sonar();
+            chiqui.ladrar();
+
+            //Los prototipos
+            //Animal deriva del prototipo Object,
+            //Pero Perro deriva del prototipo Animal
+            //Esto genera una cadena prototipica
+
+            //Javascript las clases las interpreta como prototipos
+
+
+
+        </script>
+    </div>
+</body>
+</html>
