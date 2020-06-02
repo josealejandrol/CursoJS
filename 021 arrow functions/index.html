@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Arrow Functions o Funciones Flecha</h1>
+            <p>Es una implementación que vino a mejor la manera en como escribimos una función</p>
+            <p>Son una evolución de las funciones anónimas que sean expresadas</p>
+            <p>Una función expresada es cuando a una variable le asignas el valor de una función anónima y estas para ser invocadas necesitan declararse primero</p>
+            <ul>
+                <li>
+                    const Saludo = function(){}
+                </li>
+            </ul>
+        </div>
+        <script>
+            //funciones expresadas
+            const saludar = function (){
+                console.log("Hola");
+            }
+            saludar(); //necesitan ser declaradas primero para invocarlas
+
+            
+            //Arrow functions
+
+            const saludar2 = () =>{
+                console.log("Hola 2");
+            }
+            saludar2();
+
+            //Cuando tu función tiene una sola línea de instrucción
+            //Se puede dejar de la siguiente manera:
+            //Esto nos generá una función más expresiva
+            const saludar3 = () => console.log("Hola 3");
+
+            saludar3();
+
+            //Recibiendo parámetros
+            const saludarPersona = nombre => console.log(`Hola ${nombre}`);
+
+            saludarPersona("José");
+
+            //Función expresada
+            const sumar = function(a, b){
+                return a + b;
+            }
+
+            console.log(sumar(2,3));
+
+            //Esto en la programación funcional nos permite tener menos código
+            //Una ventaja de las arrow function es que tienen un return implicito
+            //Nos evitamos escribir la palabra function
+            //Nos evitamos escribir la palabra return
+
+            //funcion sumar con arrow function de una línea
+            const sumar2 = (a, b) => a+b;
+            console.log(sumar2(3,4));
+
+            //Arrow funcion con 2 o más lineas de código
+            const functionDeVariasLineas = () => {
+                console.log("Uno");
+                console.log("Dos");
+                console.log("Tres");
+            }
+            functionDeVariasLineas();
+
+
+            const numeros = [1,2,3,4,5];
+
+            //Metodo forEach con arrow function
+            numeros.forEach((el, index)=>console.log(`${el} esta en la posición ${index}`));
+ 
+            //Como la función esta dentro del contexto del archivo, el objeto this es window
+            function Perro(){
+                console.log(this);
+            }
+            Perro();
+
+            const perro = {
+                nombre: "Firulais",
+                ladrar: function(){
+                    console.log(this);
+                }
+            }
+            //En esta funcion this es el contexto del objeto perro
+            perro.ladrar();
+
+            const perro2 = {
+                nombre: "Manchas",
+                ladrar: ()=>{
+                    console.log(this);
+                }
+            }
+            //Al transformar el metodo ladrar a una function flecha,
+            //El objeto this ya no es el objeto perro2
+            //Las arrow function tienen la capacidad de capturar el objeto en donde se encuentran
+            //Hay que tener mucho cuidado al captura arrow function en objetos literales
+            //Una funcion normal, respeta el contexto en el que se encuentra
+            //Cuando tenemos una arrow function, tienen la capacidad de saltarse el contexto en el que estan
+            //y heredar el contexto o reconocer el contexto donde se encuentra el objeto padre
+
+            perro2.ladrar();
+
+            //digamos que en el objeto perro2, quiero mandar un mensaje como hola y el nombre del perro,
+            //el this no funcionaria "this.nombre", porque se esta saltando el contexto del objeto perro2 y va al objeto window
+
+            //No es buena practica crear en metodos en objetos literales con arrow function
+
+            //La forma correcta es:
+            // const perro2 = {
+            //     nombre: "Manchas",
+            //     ladrar(){console.log(this.nombre);}
+            // }
+
+        </script>
+    </div>
+</body>
+</html>
