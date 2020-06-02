@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Herencia</h1>
+            <p>
+                La capacidad de poder heredar características de un padre a un hijo
+            </p>
+            <p>
+                En JavaScript se da a manera de cadena prototipica
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <script>
+            //Función constructora padre
+            function Animal(nombre, genero){
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            //Generamos los métodos en el prototipo de nuestra función constructora
+            Animal.prototype.sonar = function(){
+                console.log(`Hago sonidos porque estoy vivo`);
+            }
+
+            Animal.prototype.saludar = function(){
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+
+            //Herencia prototipica
+            //Recibe los mismos parámetros que el padre, y si es el caso añadir más parámetros
+            function Perro(nombre, genero, tamano){
+                //Invocamos la función Animal
+                //Super manda a llamar los atributos de la clase padre
+                this.super = Animal; //Aquí le decimos que el elemento padre de Perro es Animal
+
+                this.super(nombre, genero); //Entonces recibe los parametros del elemento padre
+            
+                this.tamano = tamano;//agregamos los parametros que no vienen del elemento padre
+            }
+
+            //Perro esta heredando de Animal
+            Perro.prototype = new Animal();
+            Perro.prototype.constructor = Perro; //generando su propio constructor
+
+            //Perro al ser una clase que hereda todo lo de animal puede utilizar sus respectivos métodos por ejemplo el método sonar();
+            //Y si necesita nuevos métodos se pueden sobreescribir
+
+            //Sobreescritura de métodos del prototipo Padre en el hijo
+            Perro.prototype.sonar= function(){
+                console.log('Soy un perro y mi sonido es un ladrido');
+            }
+
+            //Creando un nuevo método en la clase hijo
+            Perro.prototype.ladrar = function(){
+                console.log('Guauu Guauu!!!');
+            }
+
+            const scooby = new Perro("Scooby", "Macho", "Grande"),
+                laika = new Animal("Laika", "Hembra");
+
+
+            //scooby tiene una propiedad super, que hereda los atributos de Animal
+            //En scooby el prototipo es Animal
+            //Scooby tiene 2 scopes: object y Animal
+            console.log(scooby);
+            console.log(laika);
+
+            //Sobreescribimos el método sonar() en la clase hijo
+            scooby.sonar();
+            scooby.saludar();
+            scooby.ladrar();
+
+            //EL método sonar() esta heredado tal cual al padre
+            laika.sonar();
+            laika.saludar();
+
+            //Así es como se da la herencia en JavaScript
+            //"Recuerden que Javascript es un lenguaje orientado a objetos basado en prototipos"
+            
+        </script>
+    </div>
+</body>
+</html>
