@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Prototipos</h1>
+            <p>JavaScript es un lenguaje multi paradigma, podemos utilizar PF, POO</p>
+            <p>Una característica en JS es que la Orientación a Objetos es diferente a otros lenguajes.</p>
+            <p><strong>JavaScript es un lenguaje orientado a objetos, basado en prototipos no en clases.</strong></p>
+            <p>
+                Un prototipo en JavaScript, es un mecanismo por el cual un objeto puede heredar
+                 de un objeto padre atributos y métodos.
+            </p>
+            <p>
+                La herencia en JavaScript se da mediante la cadena de prototipos, es decir, 
+                hace una copia del prototipo en el cual esta basado.
+            </p>
+            <p>En POO, hay 4 conceptos muy importantes</p>
+            <ul>
+                <li>Clases</li>
+                <p>
+                    Una clase es un modelo a seguir, es un machote, para basarnos y generar instancias.
+                    <p>Por ejemplo:</p>
+                    <ul>
+                        <li>Una silla</li>
+                        <li>Una mesa</li>
+                        <li>Un animal</li>
+                    </ul>
+                </p>
+                <li>Objetos</li>
+                <p>
+                    Es una instancia de una clase, es una copia de ese modelo.
+                </p>
+                <ul>
+                    <li>Atributos</li>
+                    <p>Es una característica o propiedad del objeto</p>
+                    <p>En programación, los atributos son variables dentro de un objeto.</p>
+                    <li>Métodos</li>
+                    <p>Son las acciones que un objeto puede realizar</p>
+                    <p>En programación, los métodos son funciones dentro de un objeto</p>
+                </ul>
+            </ul>
+        </div>
+        <script>
+            
+            const animal = {
+                nombre: "Scooby",
+                sonar(){
+                    console.log("Hago sonidos porque estoy vivo.");
+                }
+            }
+            //__proto__: Object
+            console.log(animal);
+
+            const animal2 = {
+                nombre: "Teemo",
+                sonar(){
+                    console.log("Hago sonidos porque estoy vivo");
+                }
+            }
+
+            //Función constructutora
+            //La voy a construir una sola vez, y a partir de ella generar instancias que sean de este tipo función constructora
+            //Esta función genera un prototipo vacío
+            
+            //Función constructora
+            function Animal(nombre, genero){
+                //En las funciones constructoras
+                //los atributos y métodos deben colgar del objeto this
+
+                //Atributos
+                this.nombre = nombre;//Atributos de mi función constructora
+                this.genero = genero;
+
+                //Métodos
+                this.sonar = function(){//En las funciones constructoras, las funciones se declaran así
+                    console.log("Hago sonidos porque estoy vivo")
+                }
+
+                this.saludar = function(){
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+            }
+
+            //Usando nuestra función constructora para crear nuevas instancias
+            const scooby = new Animal("Scooby", "Macho"),
+                teemo = new Animal("Teemo", "Hembra");
+
+            console.log(scooby);
+            console.log(teemo);
+
+            //El detalle con la función constructora es que cada vez que generemos una nueva instancia
+            //duplicará los métodos, y si tenemos 100 animales tendremos 200 métodos duplicados
+            //y eso genera un problema de optimización ya que cada método esta ocupando memoria
+
+            scooby.sonar();
+            scooby.saludar();
+
+            teemo.sonar();
+            teemo.saludar();
+
+            //Lo ideal sería que nuestras funciones constructora solo tenga los atributos
+            //y los métodos los saquemos de la función constructora
+            //y los métodos se los peguemos a los prototipos
+
+
+            //Función constructora donde asignamos los métodos al prototipo, no a la función
+            function Animal2(nombre, genero){
+                //Atributos
+                this.nombre = nombre;//Atributos de mi función constructora
+                this.genero = genero;
+            }
+
+            //Métodos agregados al prototipo de la funciión 
+            //constructora
+
+            //Aqui asignamos por fuera al prototipo
+            //Esto lo que hara que cada vez que generemos una variable de tipo animal
+            //la función constructora solo tiene la asignación de los atributos
+
+            //Y los metodos solo se le quedarán a ese prototipo Animal2, y evita que se dupliquen los métodos
+            Animal2.prototype.sonar = function(){
+                console.log("Hago sonidos porque estoy vivo desde Animal2")
+            }
+
+            Animal2.prototype.saludar = function(){
+                console.log(`Hola me llamo ${this.nombre} desde Animal2`);
+            }
+            
+            const dayamon = new Animal2("Dayamon", "Macho");
+            const laika = new Animal2("Laika", "Hembra");
+
+            //Los métodos se encuentran dentro del prototipo de Animal2 y ya no se generá duplicación
+            console.log(dayamon);
+            console.log(laika);
+
+        </script>
+    </div>
+</body>
+</html>
