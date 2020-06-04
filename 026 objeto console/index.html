@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Objeto console</h1>
+            <p>
+                console es un objeto que reconoce Javascript, se ha estado utilizando para mostrar resultados
+                ya que no estamos manipulando los elementos del DOM (Document Object Model).
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <script>
+            //Objeto console
+            //console.log() nos permite mostrar un registro de lo que ha pasado en nuestra aplicación
+            console.log(console);
+                
+            //console.error() nos permite mandar un mensaje como error
+            console.error("Esto es un error");
+
+            //console.warn nos permite mandar un warning o alerta
+            console.warn("Esto es una alerta");
+
+            //console.info() nos permite mostrar mensajes informativos
+            console.info("Esto es un mensaje informativo");
+
+            let nombre = "José",
+                apellido = "Alejandro",
+                edad = 35;
+
+            //Imprimiendo las variables individuales
+            console.log(nombre);
+            console.log(apellido);
+            console.log(edad);
+
+            //Imprimiendo las variables en un solo console.log();
+            console.log(nombre, apellido, edad);
+
+            //Mandando un mensaje con las variables
+            console.log(`Hola mi nombre es ${nombre} ${apellido}`);
+
+            //Usando comodines %
+            console.log(`Hola mi nombre es %s %s y tengo %d años`, nombre, apellido, edad);
+
+            //console.clear() limpia la consola
+            //console.clear();
+
+            //Objeto global del navegador
+            console.log(window);
+
+            //document es la representación del html a través de javascript
+            console.log(document);//En lugar de mostrarme las propiedades
+            //Al abrirlo muestra todo el contenido de dicho documento html
+
+            //console.dir() nos muestra los atributos y métodos
+            console.dir(window);
+
+            console.dir(document);
+
+            console.clear();
+
+            //console.group() agrupa los console
+            console.group("Sigueme en mis redes sociales");
+            console.log("fb");
+            console.log("Twitter");
+            console.log("Instagram");
+            console.log("Reddit");
+            console.groupEnd();
+
+            console.clear()
+
+            //console.table() Nos muestra una tabla en la consola
+            console.table(Object.entries(console).sort());//.sort() nos ordena alfabeticamente
+
+            const numeros = [1, 2, 3, 4, 5],
+                vocales = ["a", "e", "i", "o", "u"];
+
+            console.table(numeros);
+            console.table(vocales);
+
+            const perro = {
+                nombre: "Fifi",
+                raza: "Chihuahua",
+                color: "Negro"
+            }
+
+            console.table(perro);
+
+            console.clear();
+
+            //Saber el tiempo exacto en que tarda una petición ajax o fetch
+            console.time("Cuanto tiempo tarda mi código");
+
+            const arreglo = Array(1000000);
+
+            for(let i = 0; i < arreglo.length; i++){
+                arreglo[i] = i; 
+            }
+
+            console.timeEnd("Cuanto tiempo tarda mi código");
+            //console.log(arreglo);
+
+            console.clear();
+
+            //console.count() nos muestra cuantas veces se ha ejecutado ese código
+            for(let i = 0; i < 100; i++){
+                console.count("Código for")
+                console.log(i);
+            }
+
+            console.clear();
+
+            //console.assert() nos sirve para realizar pequeñas pruebas a nuestro código
+            //console.assert(condición, variables en juego, mensaje de prueba).
+            let x = 1,
+                y = 2,
+                pruebaXY = "Se espera que X siempre sea menor que Y";
+
+            console.assert(x < y, x, y, pruebaXY);
+            //Cuando la condición se cumple no se muestra nada en consola
+        </script>
+    </div>
+</body>
+</html>
