@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">objeto Math</h1>
+            <p>
+                Objeto que nos ayuda mucho a hacer operaciones matematicas especiales,
+                este es un objeto estatico, entonces cada vez que lo vayamos a necesirar
+                tenemos que invocar el Objeto Math
+            </p>
+            <p>
+                El objeto Math ya trae propiedades por defecto o fijas, por ejemplo:
+                <ul>
+                    <li>PI: 3.141592....</li>
+                    <li>E de euler: 2.718281.....</li>
+                </ul>
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <script>
+            //imprimiendo la propiedad PI que trae el objeto Math
+            console.log(Math.PI);
+
+            //Método
+            console.log(Math)
+
+            //abs() nos retorna el valor absoluto de un número
+            //Si el valor fuera negativo me lo retorna sin importar si es positivo o negativo
+            console.log(Math.abs(5.8))
+
+            //Método para redondear un número al siguiente número entero inmediato
+            console.log(Math.ceil(5.5));
+
+            //Método para redondear un dato al entero actual
+            console.log(Math.floor(7.1));
+
+            //Método para redondear al número más cercano
+            console.log(Math.round(7.5)); //8
+            console.log(Math.round(7.4)); //7
+
+            //Raíces cuadradas
+            console.log(Math.sqrt(81)); //9
+
+            //Potencias .pow(base, potencia)
+            console.log(Math.pow(2,2));
+
+            //Método para saber si el número es negativo, positivo o 0
+            //indicador: si es negativo: -1, es cero: 0, positivo: 1
+            console.log(Math.sign(-7.5)); //-1
+
+            //Método para generar valores aleatorios
+            //Por defecto retorna un valor entre 0 - 1 p,e.: 0.75511849            
+            console.log(Math.random());
+
+            //Tenemos una rifa con 1,000 boletos
+            //Necesitamos un número aleatorio entre 0 - 1000
+            console.log(Math.round(Math.random()*1000));
+
+        </script>
+    </div>
+</body>
+</html>
