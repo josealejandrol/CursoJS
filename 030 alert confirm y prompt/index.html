@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">alert, confirm y prompt</h1>
+            <p>
+                Son 3 métodos que cuelgan de su objeto padre window
+                <ul>
+                    <li>window.alert()</li>
+                    <li>window.confirm()</li>
+                    <li>window.prompt()</li>
+                </ul>
+            </p>
+            <p>
+                Estos métodos sólo estan disponibles en el javascrit del navegador
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <script>
+            //objeto window
+            console.log(window);
+
+            // window.alert("Esto es una alerta");
+            // window.confirm("Esto es una confirmación");
+            // window.prompt("Ingrese un valor:");
+
+            //No es necesario agregar el objeto global window
+            // alert("Esto es una alerta");
+            // confirm("Esto es una confirmación");
+            // prompt("Ingrese un valor:");
+
+            let alerta = alert("Esto es una alerta"),
+                confirmacion = confirm("Esto es una confirmación");
+                aviso = prompt("Ingrese un valor:");
+            
+            console.log(alerta);//undefined
+            console.log(confirmacion);// true o false
+            console.log(aviso);//valor ingresado
+
+        </script>
+    </div>
+</body>
+</html>
