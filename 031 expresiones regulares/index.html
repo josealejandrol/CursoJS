@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Expresiones Regulares</h1>
+            <p>
+                Una expresión regular es una secuencia de caracteres que forman un patrón de busqueda
+                y que principalmente es utilizado en la busqueda de cadenas de texto.
+            </p>
+            <ul>
+                <li><a href="https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular">https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions">https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions</a></li>
+            </ul>
+            <p>
+                Las expresiones regulares no son algo exclusivo de JavaScript,
+                cualquier tecnología que se de un lenguaje de programación,
+                tiene que tener una implemetación de expresiones regulares.
+            </p>
+            <p>
+                Las expresiones regulares facilitan mucho la vida, por ejemplo:
+                <ul>
+                    <li>Cuando quieras validar que un correo electrónico se haya escrito y tenga los parametros validos</li>
+                    <li>Para validad un DNI</li>
+                    <li>Para validad el RFC</li>
+                    <li>Validar los 16 digitos de una tarjeta</li>
+                </ul>
+            </p>
+            <p>Existen 2 métodos para las expresiones regulares:</p>
+            <ul>
+                <li>.test() que devuelve un true o false dependiendo de la validación</li>
+                <li>.exec() que devuelve un array con información</li>
+            </ul>
+        </div>
+        <script>
+            let cadena = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed vulputate elit. Vestibulum vitae feugiat neque. Phasellus vestibulum, elit at. lorem";
+
+            //RegExp(); recibe 2 parametros: patrón, banderas
+            //Las banderas son pequeñas modificaciones que podemos apregarle a nuestra ExpReg
+
+            //la bandera g, busca todas las coincidencias
+            //La bandera i, ignora mayusculas y minusculas
+
+            //2 formas de declarar una expresión regular
+            //Agregando banderas let expReg = new RegExp("lorem", "ig");
+            let expReg = new RegExp("lorem", "");//Forma 1
+
+            //Agregando banderas let expReg2 = /lorem/ig;
+            let expReg2 = /lorem/; //Forma 2
+
+            //==Métodos para las expresiones regulares==
+
+            //Método .test()
+            console.log(expReg.test(cadena));//true
+            console.log(expReg2.test(cadena));//true
+
+            //Método .exec()
+            //Este método devuelve un arreglo con la información de la validación
+            console.log(expReg.exec(cadena));
+            console.log(expReg2.exec(cadena));
+
+            
+
+        </script>
+    </div>
+</body>
+</html>
