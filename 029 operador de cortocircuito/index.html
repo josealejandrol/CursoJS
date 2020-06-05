@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">operador de cortocircuito</h1>
+            <p>
+               Los operadores de cortocircuito funcionan poniendo dos expresiones,
+               ya sea utilizando el operador lógico Or (||) o And (&&).
+            </p>
+            <p>
+                Cortocircuito Or -  Cuando el valor de la izquierda en la expresión
+                siempre pueda validar a true, el valor que se cargará por defecto
+            </p>
+            <p>
+                Cortocircuito And - Cuando el valor de la izquierda en la expresión
+                siempre pueda validar a false, es el valor que se cargará por defecto
+            </p>
+        </div>
+        <script>
+            // Cortocircuito Or -  Cuando el valor de la izquierda en la expresión
+            // siempre pueda validar a true, el valor que se cargará por defecto
+            // Cortocircuito And - Cuando el valor de la izquierda en la expresión
+            // siempre pueda validar a false, es el valor que se cargará por defecto
+
+            //Cortocircuito con Or ||
+            function saludar(nombre){
+                nombre = nombre || "Desconocido";
+                console.log(`Hola ${nombre}`);
+            }
+            
+            saludar();
+            saludar("José");
+
+            console.log("Valor" || "Otro valor");//"Valor"
+            console.log(19 || "Otro número");//19
+            console.log(true || false);//true
+            console.log([] || "Valor de la derecha");//[]
+
+            console.log(false || "Valor de la derecha")//"Valor de la derecha"
+
+            //Cortocircuito con And &&
+            console.log("Valor" && "Otro valor");//"Otro Valor"
+            console.log(19 && "Otro número");//"Otro número"
+            console.log(true && false);//false
+            console.log([] && "Valor de la derecha");//"Valor de la derecha"
+
+            console.log(false && "Valor de la derecha")//"Valor de la derecha"
+
+        </script>
+    </div>
+</body>
+</html>
