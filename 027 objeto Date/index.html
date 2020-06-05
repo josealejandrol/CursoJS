@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">objeto Date</h1>
+            <p>
+                El constructor Date() nos retorna la hora y fecha actual
+            </p>
+        </div>
+        <script>
+            //constructor Date
+            console.log(Date());
+
+            let fecha = new Date();
+            console.log(fecha);
+
+            //día del mes
+            console.log(fecha.getDate());
+
+            //día de la semana D L M M J V S = 0 1 2 3 4 5 6
+            console.log(fecha.getDay());
+
+            // mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic = 0 1 2 3 4 5 6 7 8 9 10 11
+            console.log(fecha.getMonth());
+
+            //Nos retorna el año a partir de 1920
+            console.log(fecha.getYear());
+
+            //Nos retorna el año a 4 digitos
+            console.log(fecha.getFullYear());
+
+            //Hora en formato de 24 hrs
+            console.log(fecha.getHours());
+
+            //Minutos
+            console.log(fecha.getMinutes());
+
+            //Segundos
+            console.log(fecha.getSeconds());
+
+            //milisegundos
+            console.log(fecha.getMilliseconds());
+
+            //Transfromando el objeto Date a String
+            console.log(fecha.toString());
+
+            //Pasando a string solo la fecha
+            console.log(fecha.toDateString());
+
+            console.log(fecha.toLocaleString()); //dd/mm//aaaa hh:mm:ss
+
+            console.log(fecha.toLocaleDateString()); //dd/mm/aaaa
+
+            console.log(fecha.toLocaleTimeString()); //hh:mm:ss
+
+
+            //Obtener los datos de fecha y hora londres GMT 0
+            console.log(fecha.getUTCDate());//Día
+            console.log(fecha.getUTCHours());//Horas
+
+            //Obteniendo el instante, el numero que esta ocurriendo ahora
+            //Devuelve los segundos desde timestamp 1ro de enero de 1970
+            //El timestamp se usa mucho en las bases de datos
+            console.log(Date.now());
+
+
+            //Una libreria para el manejo de los tiempos popular en JavaScript es Moment.js
+            
+            let  cumpleJose = new Date(1996,10,26);
+            console.log(cumpleJose);
+
+        </script>
+    </div>
+</body>
+</html>
