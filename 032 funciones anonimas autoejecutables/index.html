@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Funciones anónimas autoejecutables</h1>
+            <p>
+                Es una función en la cual se engloba todo el código que se quiere ejecutar,
+                se auto ejecutan y no tienen nombre.
+            </p>
+            <p>
+                En el momento que cargue el archivo .js o el script, se ejecuta nuestra función auto ejecutable
+            </p>
+            <p>
+                Las funciones anonimas autoejecutables nos va a permitir poder pasar parametros
+                y utilizar alias dentro del cuerpo de nuestra función. 
+            </p>
+            <p>
+                Patrón muy utilizado en la época de JQuery, ember, lodash.
+            </p>
+        </div>
+        <script>
+            //función anónima autoejecutable
+            //La encapculamos en un parentesis
+            (function(){
+                //Immediately Invoked Function Expression
+                console.log("Mi primer IIFE");
+            })();
+
+            //El código de una no tiene conflictos con la otra
+
+            //d = document, w = window, c = console
+            (function(d, w, c){
+                console.log("Mi segunda IIFE");
+                console.log(d);
+                console.log(w);
+                c.log("Esto es un console.log");
+            })(document.window.console);
+
+            //Formas de escribir funciones aónimas autojecutables
+            //Clásica
+            (function(){
+                console.log("Versión clásica");
+            })();
+
+            //Versión Crockford
+            ((function(){
+                //Se llama Crockford porque lo propone Lucas Crockford
+                //autor de La Crockford (JavaScript The Good Parts)
+                console.log("Versión Crockford");
+            })());
+
+            //Unaria
+            +function(){
+                console.log("Versión Unaria")
+            }();
+
+            //Facebook
+            !function(){
+                console.log("Versión Facebook");
+            }();
+        </script>
+    </div>
+</body>
+</html>
