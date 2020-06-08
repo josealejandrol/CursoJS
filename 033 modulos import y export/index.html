@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de JavaScript</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="background-color: yellow; padding: 10px; text-align: center;">Módulos en Javascript</h1>
+            <p>
+                Los módulos en JavaScript significa que puedes mandar a llamar
+                los archivos .js no solo desde un archivo, sino tambien desde un archivo JavaScript
+                mandar a llamar otro.
+            </p>
+            <p>
+                Los archivos js se pueden importar dentro de las etiquetas head 
+                de nuestro archivo html si necesitamos cargar el código antes de que
+                el navegador lea el contenido del body
+            </p>
+            <p>
+                También pueden importarse dentro de la etiqueta body, antes del cierre de 
+                la etiqueta body porque el código js es bloqueante
+                y si tus archivos pesan mucho puede hacer que tarde en cargar
+            </p>
+            <p>
+                Para que los archivos js tengan la capacidad de llamar otros archivo js
+                hay que declarar en la etiqueta script donde se invoca el archivo js,
+                agregar el atributo type="module"
+            </p>
+        </div>
+        
+    </div>
+    <script src="js/modulos.js" type="module"></script>
+    <script src="js/no-modulos.js" nomodule></script>
+    
+    <script>
+        //Por jerarquia de invocaciones el ultimo se ejecuta el primero
+
+        //Hay una propiedad "nomodule" que es un booleano 
+        //Y si el navegador que estas utilizando no soporta los
+        //modulos ECMAScript se invocará o no, esto solo se reconoce en los navegadores modernos
+
+        //Importación por defecto significa que cuando se mande a llamar en formato de modulo,
+        //es la función que por default se va a impotar
+
+        //No se pueden tener dos o mas funciones, objetos o variables exportadas por defecto, solo 1 
+
+        //No se pueden exportar por defecto una variable o funcion expresada en la misma linea o al momento
+        //  export default const hello = () =>{}
+        //Para resolver esto
+        //const hello = () =>{}
+        //export default hello;
+
+        //Las unicas que permiten la importación por defecto cuando se estan 
+        //declarando son las funcions y las clases
+
+        
+    </script>
+
+</body>
+</html>
